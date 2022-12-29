@@ -1,0 +1,18 @@
+# https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd#installing-the-chart
+
+argo-cd:
+  configs:
+    cm:
+      url: https://argo.nategramer.com
+
+  controller:
+    resources: {}
+
+  repoServer:
+    resources: {}
+
+  server:
+    resources: {}
+
+  redis:
+    resources: {}

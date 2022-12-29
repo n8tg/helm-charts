@@ -1,0 +1,11 @@
+
+name: istio
+version: 0.1.0
+dependencies:
+  - name: base
+    repository: https://istio-release.storage.googleapis.com/charts
+    version: 1.16.1
+
+  - name: istiod
+    repository: https://istio-release.storage.googleapis.com/charts
+    version: 1.16.1

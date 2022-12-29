@@ -1,0 +1,12 @@
+# https://github.com/istio/istio/tree/master/manifests/charts
+
+gateway:
+  service:
+    type: ClusterIP
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 2000m
+      memory: 1024Mi

@@ -7,7 +7,7 @@ istiod:
     # Resources for a small pilot install
     resources:
       requests:
-        cpu: 500m
+        cpu: 50m
         memory: 512M
     proxy:
       # Resources for the sidecar.

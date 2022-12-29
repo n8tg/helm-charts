@@ -1,5 +1,5 @@
 
-name: argocd
+name: argo-cd
 version: 0.1.1
 dependencies:
   - name: argo-cd

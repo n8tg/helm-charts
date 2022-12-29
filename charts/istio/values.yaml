@@ -1,7 +1,6 @@
 # Values for 2 base Istio charts
 # https://github.com/istio/istio/tree/master/manifests/charts
 
-base:
 
 istiod:
   pilot:

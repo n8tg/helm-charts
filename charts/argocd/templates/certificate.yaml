@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-cert
+  namespace: istio-ingressgateway
+spec:
+  secretName: argocd-cert
+  commonName: argocd.gke.nategramer.com
+  dnsNames:
+  - argocd.gke.nategramer.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

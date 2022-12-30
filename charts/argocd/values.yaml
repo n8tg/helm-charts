@@ -25,6 +25,10 @@ argo-cd:
 
   redis:
     resources: {}
+  
+  redis-ha:
+    haproxy:
+      enabled: false
 
   server:
     resources: {}

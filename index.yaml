@@ -2,6 +2,13 @@ apiVersion: v1
 entries:
   argo-cd:
   - apiVersion: v1
+    created: "2022-12-30T17:19:38.215122584Z"
+    digest: 05e20f70d58568be38f3635323325a7ad1b2d42ec0da1e0e21a3e003ed7a59d0
+    name: argo-cd
+    urls:
+    - https://github.com/n8tg/helm-charts/releases/download/argo-cd-0.1.3/argo-cd-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
     created: "2022-12-30T17:17:34.926565388Z"
     digest: 60e7974bb14279df5b923d12fc4dbd15743a2788a32886e2bcd98524db597f00
     name: argo-cd
@@ -83,4 +90,4 @@ entries:
     urls:
     - https://github.com/n8tg/helm-charts/releases/download/istio-ingressgateway-0.1.0/istio-ingressgateway-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-30T17:17:34.926582289Z"
+generated: "2022-12-30T17:19:38.215142184Z"

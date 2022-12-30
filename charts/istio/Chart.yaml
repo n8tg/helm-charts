@@ -1,6 +1,7 @@
-
+apiVersion: v2
 name: istio
-version: 0.1.3
+version: 0.1.4
+appVersion: 1.16.1
 dependencies:
   - name: base
     repository: https://istio-release.storage.googleapis.com/charts

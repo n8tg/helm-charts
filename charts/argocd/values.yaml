@@ -1,18 +1,30 @@
 # https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd#installing-the-chart
 
 argo-cd:
+  applicationSet:
+    enabled: false
+
   configs:
+    params:
+      server:
+        insecure: true # TLS handled by istio
     cm:
       url: https://argo.nategramer.com
 
   controller:
     resources: {}
 
+  dex:
+    enabled: false
+
+  notifications:
+    enabled: false
+
   repoServer:
     resources: {}
 
-  server:
+  redis:
     resources: {}
 
-  redis:
+  server:
     resources: {}

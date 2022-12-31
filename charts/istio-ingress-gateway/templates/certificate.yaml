@@ -5,9 +5,9 @@ metadata:
   namespace: istio-ingressgateway
 spec:
   secretName: ingress-cert
-  commonName: gke.nategramer.com
+  commonName: ${{ .Values.clusterIngressDomain }}
   dnsNames:
-  - gke.nategramer.com
+  - ${{ .Values.clusterIngressDomain }}
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

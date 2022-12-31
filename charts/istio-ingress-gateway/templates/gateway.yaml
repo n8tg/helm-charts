@@ -3,8 +3,6 @@ kind: Gateway
 metadata:
   name: istio-ingressgateway
   namespace: istio-ingressgateway
-  annotations:
-    cert-manager.io/issuer: letsencrypt-prod
 spec:
   selector:
     app: istio-ingressgateway
@@ -14,15 +12,25 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - gke.nategramer.com
+    - ${{ .Values.clusterIngressDomain }}
     tls:
-      httpsRedirect: true # sends 301 redirect for http requests
+      httpsRedirect: false # Configured on virtual service, cert-manager needs to solve via http
+  
+  - port:
+      number: 80
+      name: http-wildcard
+      protocol: HTTP
+    hosts:
+    - "*.${{ .Values.clusterIngressDomain }}"
+    tls:
+      httpsRedirect: false # Configured on virtual service, cert-manager needs to solve via http
+
   - port:
       number: 443
       name: https-443
       protocol: HTTPS
     hosts:
-    - gke.nategramer.com
+    - ${{ .Values.clusterIngressDomain }}
     tls:
       mode: SIMPLE # enables HTTPS on this port
-      credentialName: istio-ingressgateway # fetches certs from Kubernetes secret
+      credentialName: ingress-cert # fetches certs from Kubernetes secret

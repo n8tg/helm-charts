@@ -3,26 +3,16 @@ kind: Gateway
 metadata:
   name: argocd-ingress
   namespace: istio-ingressgateway
-  annotations:
-    cert-manager.io/issuer: letsencrypt-prod
 spec:
   selector:
     app: istio-ingressgateway
   servers:
   - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - argocd.gke.nategramer.com
-    tls:
-      httpsRedirect: true # sends 301 redirect for http requests
-  - port:
       number: 443
-      name: https-443
+      name: https-443-argo
       protocol: HTTPS
     hosts:
     - argocd.gke.nategramer.com
     tls:
       mode: SIMPLE # enables HTTPS on this port
-      credentialName: istio-ingressgateway # fetches certs from Kubernetes secret
+      credentialName: argocd-cert # fetches certs from Kubernetes secret
